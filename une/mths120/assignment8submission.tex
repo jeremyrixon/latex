@@ -1,0 +1,355 @@
+\documentclass[12pt,a4paper]{report}
+\usepackage[margin=1in]{geometry}
+\usepackage{amssymb}
+\usepackage{amsmath}
+\usepackage{siunitx}
+\setlength\parindent{0pt}
+\linespread{1.5}
+\begin{document}
+
+\textbf{MTHS120 Assessment 8}
+
+\textbf{Question 1.}
+
+We have the following system of linear equations:
+\begin{align*}
+ 1/5c + 3/20l + 1/10z &= 300 \\
+  10c +    5l +    4z &= 13900 \\
+   3c +    2l +  5/2z  &= 5325
+\end{align*} 
+
+Represented in matrix form and using Gauss-Jordan elimination:
+ \[
+ \left(\begin{array}{rrr|r}
+   1/5 & 3/20 & 1/10 & 300  \\
+   10  & 5    & 4    & 13900  \\
+   3   & 2    & 5/2  & 5325  \\ 
+   \end{array} \right)
+\]
+
+\( R1 \rightarrow R1 \times 5 \):
+ \[
+ \left(\begin{array}{rrr|r}
+   1   & 3/4  & 1/2  & 1500  \\
+   10  & 5    & 4    & 13900  \\
+   3   & 2    & 5/2  & 5325  \\ 
+   \end{array} \right)
+\]
+
+\( R1 \rightarrow R2 - R1 \times 10 \):
+ \[
+ \left(\begin{array}{rrr|r}
+   1   & 3/4  & 1/2  & 1500  \\
+   0   & -5/2 & -1   & -1100  \\
+   3   & 2    & 5/2  & 5325  \\ 
+   \end{array} \right)
+\]
+
+\( R3 \rightarrow R3 - R1 \times 3 \):
+ \[
+ \left(\begin{array}{rrr|r}
+   1   & 3/4  & 1/2  & 1500  \\
+   0   & -5/2 & -1   & -1100  \\
+   0   & -1/4 & 1    & 825  \\ 
+   \end{array} \right)
+\]
+
+\( R2 \rightarrow R2 \times -2/5 \):
+ \[
+ \left(\begin{array}{rrr|r}
+   1   & 3/4  & 1/2  & 1500  \\
+   0   & 1    & 2/5  & 440  \\
+   0   & -1/4 & 1    & 825  \\ 
+   \end{array} \right)
+\]
+
+\( R3 \rightarrow R3 + R2 \times 1/4 \):
+ \[
+ \left(\begin{array}{rrr|r}
+   1   & 3/4  & 1/2  & 1500  \\
+   0   & 1    & 2/5  & 440  \\
+   0   & 0    & 11/10& 935  \\ 
+   \end{array} \right)
+\]
+
+\( R1 \rightarrow R1 - R2 \times 3/4 \):
+ \[
+ \left(\begin{array}{rrr|r}
+   1   & 0    & 1/5  & 1170  \\
+   0   & 1    & 2/5  & 440  \\
+   0   & 0    & 11/10& 935  \\ 
+   \end{array} \right)
+\]
+
+\( R3 \rightarrow R3 \times 10/11 \):
+ \[
+ \left(\begin{array}{rrr|r}
+   1   & 0    & 1/5  & 1170  \\
+   0   & 1    & 2/5  & 440  \\
+   0   & 0    & 1    & 850  \\ 
+   \end{array} \right)
+\]
+
+\( R1 \rightarrow R1 - R3 \times 1/5 \):
+ \[
+ \left(\begin{array}{rrr|r}
+   1   & 0    & 0    & 1000  \\
+   0   & 1    & 2/5  & 440  \\
+   0   & 0    & 1    & 850  \\ 
+   \end{array} \right)
+\]
+
+\( R2 \rightarrow R2 - R3 \times 2/5 \):
+ \[
+ \left(\begin{array}{rrr|r}
+   1   & 0    & 0    & 1000  \\
+   0   & 1    & 0    & 100  \\
+   0   & 0    & 1    & 850  \\ 
+   \end{array} \right)
+\]
+
+So we can read off the values:
+\begin{align*}
+ copper &= 1000\text{ tonnes} \\
+ lead   &= 100\text{ tonnes} \\
+ zinc   &= 850\text{ tonnes}
+\end{align*} 
+
+
+\textbf{Question 2.}
+
+We can write the chemical equation as:
+\begin{align*}
+ x_1\text{Fe} + x_2\text{O\textsubscript{2}} &= x_3\text{Fe\textsubscript{2}O\textsubscript{3}}
+\end{align*} 
+
+And rewrite in terms of balancing Fe and O on each side:
+\begin{align*}
+x_1 - 2x_3 &= 0 \quad \text{ (for Fe)}\\
+2x_2 - 3x_3 &= 0 \quad \text{ (for O)}
+\end{align*} 
+
+Represented in matrix form and using Gauss-Jordan elimination:
+ \[
+ \left(\begin{array}{rrr}
+   1 & 0 & -2 \\
+   0 & 2 & -3 \\
+   \end{array} \right)
+\]
+
+\( R2 \rightarrow R2/2 \):
+ \[
+ \left(\begin{array}{rrr}
+   1 & 0 & -2 \\
+   0 & 1 & -3/2 \\
+   \end{array} \right)
+\]
+
+So we have:
+\begin{align*}
+x_1 - 2x_3 &= 0 \\
+x_2 - 3/2x_3 &= 0
+\end{align*} 
+
+Parametrically in terms of \(t\):
+\begin{align*}
+\begin{bmatrix}x_1\\x_2\\x_3\end{bmatrix} &= t \begin{bmatrix}2\\3/2\\1\end{bmatrix}
+\end{align*} 
+
+Setting \(t\) to \(2\):
+\begin{align*}
+\begin{bmatrix}x_1\\x_2\\x_3\end{bmatrix} &= \begin{bmatrix}4\\3\\2\end{bmatrix}
+\end{align*} 
+
+Gives:
+\begin{align*}
+4\text{Fe} + 3\text{O\textsubscript{2}} &= 2\text{Fe\textsubscript{2}O\textsubscript{3}}
+\end{align*} 
+
+\textbf{Question 3.}
+
+We can write the chemical equation as:
+\begin{align*}
+ x_1\text{Fe\textsubscript{2}O\textsubscript{3}} + x_2\text{C} &= x_3\text{Fe} + x_4\text{CO\textsubscript{2}}
+\end{align*} 
+
+And rewrite in terms of balancing Fe, O and C on each side:
+\begin{align*}
+2x_1 - x_3 &= 0 \quad \text{ (for Fe)}\\
+3x_1 - 2x_4 &= 0 \quad \text{ (for O)} \\
+x_2 - x_4 &= 0 \quad \text{ (for C)}
+\end{align*} 
+
+Represented in matrix form and using Gauss-Jordan elimination:
+ \[
+ \left(\begin{array}{rrrr}
+   2 & 0 & -1 & 0 \\
+   3 & 0 & 0  & -2 \\
+   0 & 1 & 0  & -1 \\
+   \end{array} \right)
+\]
+
+\( R1 \rightarrow R1/2 \):
+ \[
+ \left(\begin{array}{rrrr}
+   1 & 0 & -1/2 & 0 \\
+   3 & 0 & 0  & -2 \\
+   0 & 1 & 0  & -1 \\
+   \end{array} \right)
+\]
+
+Swap R2 and R3:
+ \[
+ \left(\begin{array}{rrrr}
+   1 & 0 & -1/2 & 0 \\
+   0 & 1 & 0  & -1 \\
+   3 & 0 & 0  & -2 \\
+   \end{array} \right)
+\]
+
+\( R3 \rightarrow R3 - R1 \times 3 \):
+ \[
+ \left(\begin{array}{rrrr}
+   1 & 0 & -1/2 & 0 \\
+   0 & 1 & 0  & -1 \\
+   0 & 0 & 3/2 & -2 \\
+   \end{array} \right)
+\]
+
+\( R3 \rightarrow R3 \times 2/3 \):
+ \[
+ \left(\begin{array}{rrrr}
+   1 & 0 & -1/2 & 0 \\
+   0 & 1 & 0  & -1 \\
+   0 & 0 & 1 & -4/3 \\
+   \end{array} \right)
+\]
+
+\( R1 \rightarrow R1 + R3 \times 1/2 \):
+ \[
+ \left(\begin{array}{rrrr}
+   1 & 0 & 0 & -2/3 \\
+   0 & 1 & 0  & -1 \\
+   0 & 0 & 1 & -4/3 \\
+   \end{array} \right)
+\]
+
+So we have:
+\begin{align*}
+x_1 - 2/3x_4 &= 0 \\
+x_2 -    x_4 &= 0 \\
+x_3 -    4/3x_4 &= 0
+\end{align*} 
+
+Parametrically in terms of \(t\):
+\begin{align*}
+\begin{bmatrix}x_1\\x_2\\x_3\\x_4\end{bmatrix} &= t \begin{bmatrix}2/3\\1\\4/3\\1\end{bmatrix}
+\end{align*} 
+
+Setting \(t\) to \(3\):
+\begin{align*}
+\begin{bmatrix}x_1\\x_2\\x_3\\x_4\end{bmatrix} &= \begin{bmatrix}2\\3\\4\\3\end{bmatrix}
+\end{align*} 
+
+Gives:
+\begin{align*}
+ 2\text{Fe\textsubscript{2}O\textsubscript{3}} + 3\text{C} &= 4\text{Fe} + 3\text{CO\textsubscript{2}}
+\end{align*} 
+
+\textbf{Question 4.}
+
+Plugging the three given points into the quadratic polynomial gives us:
+\begin{align*}
+  a +  b + c &= 4  \\
+ 4a + 2b + c &= 2  \\
+ 9a + 3b + c &= -2 
+\end{align*} 
+
+
+Represented in matrix form and using Gauss-Jordan elimination:
+ \[
+ \left(\begin{array}{rrr|r}
+   1 & 1 & 1 & 4 \\
+   4 & 2 & 1 & 2  \\
+   9 & 3 & 1 & -2  \\ 
+   \end{array} \right)
+\]
+
+\( R2 \rightarrow R2 - 4 \times R1\):
+ \[
+ \left(\begin{array}{rrr|r}
+   1 & 1  & 1  & 4 \\
+   0 & -2 & -3 & -14  \\
+   9 & 3  & 1  & -2  \\ 
+   \end{array} \right)
+\]
+
+\( R3 \rightarrow R3 - 9 \times R1 \):
+ \[
+ \left(\begin{array}{rrr|r}
+   1 & 1  & 1  & 4 \\
+   0 & -2 & -3 & -14  \\
+   0 & -6 & -8 & -38  \\ 
+   \end{array} \right)
+\]
+
+\( R2 \rightarrow R2 \times -1/2\):
+ \[
+ \left(\begin{array}{rrr|r}
+   1 & 1  & 1  & 4 \\
+   0 & 1 & 1.5 & 7  \\
+   0 & -6 & -8 & -38  \\ 
+   \end{array} \right)
+\]
+
+\( R3 \rightarrow R3 + 6 \times R2\):
+ \[
+ \left(\begin{array}{rrr|r}
+   1 & 1  & 1  & 4 \\
+   0 & 1 & 1.5 & 7  \\
+   0 & 0 & 1 & 4  \\ 
+   \end{array} \right)
+\]
+
+\( R1 \rightarrow R1 - R2\):
+ \[
+ \left(\begin{array}{rrr|r}
+   1 & 0 & -0.5 & -3 \\
+   0 & 1 & 1.5 & 7  \\
+   0 & 0 & 1 & 4  \\ 
+   \end{array} \right)
+\]
+
+\( R1 \rightarrow R1 + R3/2\):
+ \[
+ \left(\begin{array}{rrr|r}
+   1 & 0 & 0 & -1 \\
+   0 & 1 & 1.5 & 7  \\
+   0 & 0 & 1 & 4  \\ 
+   \end{array} \right)
+\]
+
+\( R2 \rightarrow R2 - R3/2\):
+ \[
+ \left(\begin{array}{rrr|r}
+   1 & 0 & 0 & -1 \\
+   0 & 1 & 0 & 1  \\
+   0 & 0 & 1 & 4  \\ 
+   \end{array} \right)
+\]
+
+So:
+\begin{align*}
+a &= -1 \\
+b &= 1 \\
+c &= 4
+\end{align*}
+
+So the quadratic polynomial is:
+\begin{align*}
+y = -x^2 + x + 4
+\end{align*}
+
+
+\end{document}
+
