@@ -3,6 +3,9 @@
 \usepackage{amssymb}
 \usepackage{amsmath}
 \usepackage{siunitx}
+\usepackage{pgfplots}
+\usepackage{tikz}
+\usetikzlibrary{shapes,positioning,intersections,quotes}
 \setlength\parindent{0pt}
 \linespread{1.5}
 \begin{document}
@@ -99,6 +102,7 @@ So we can read off the values:
  f_{n-1} &= \%40
 \end{align*} 
 
+\newpage
 \textbf{Question 1b.}
 
 We wish to solve the following system of linear equations:
@@ -201,7 +205,122 @@ The determinant is:
                                                       &= 0 \\
 \end{align*}
 
+\newpage
+\textbf{Question 3a.}
 
+\begin{tikzpicture}
+\draw[step=1cm,gray,very thin] (-3.9,-3.9) grid (3.9,3.9);
+\draw[thick,->] (0,0) -- (4,0);
+\draw[thick,->] (0,0) -- (0,4);
+\draw[thick,->] (0,0) -- (-4,0);
+\draw[thick,->] (0,0) -- (0,-4);
+\draw (2pt,1) -- (-2pt,1) node[anchor=south east] {i};
+\draw (2pt,2) -- (-2pt,2) node[anchor=south east] {2i};
+\draw (2pt,3) -- (-2pt,3) node[anchor=south east] {3i};
+\draw (2pt,-1) -- (-2pt,-1) node[anchor=south east] {-i};
+\draw (2pt,-2) -- (-2pt,-2) node[anchor=south east] {-2i};
+\draw (2pt,-3) -- (-2pt,-3) node[anchor=south east] {-3i};
+\draw (1,2pt) -- (1,-2pt) node[anchor=south east] {1};
+\draw (2,2pt) -- (2,-2pt) node[anchor=south east] {2};
+\draw (3,2pt) -- (3,-2pt) node[anchor=south east] {3};
+\draw (-1,2pt) -- (-1,-2pt) node[anchor=south east] {-1};
+\draw (-2,2pt) -- (-2,-2pt) node[anchor=south east] {-2};
+\draw (-3,2pt) -- (-3,-2pt) node[anchor=south east] {-3};
+\filldraw (1,1) circle[radius=1.5pt];
+\node[above right=5pt of {(1,1)}] {\(1+i\)};
+\end{tikzpicture}
 
+\begin{align*}
+z &= 1 + i \\
+r &= |z| \\
+ &= \sqrt{1^2 + 1^2} \\
+ &= \sqrt{2} \\
+  \theta &= tan^{-1}(\frac{1}{1}) \\
+ &= \frac{\pi}{4} \\
+z &= \sqrt{2}e^{i\frac{\pi}{4}} \\
+\end{align*}
+
+\newpage
+\textbf{Question 3b.}
+
+\begin{tikzpicture}
+\draw[step=1cm,gray,very thin] (-3.9,-3.9) grid (3.9,3.9);
+\draw[thick,->] (0,0) -- (4,0);
+\draw[thick,->] (0,0) -- (0,4);
+\draw[thick,->] (0,0) -- (-4,0);
+\draw[thick,->] (0,0) -- (0,-4);
+\draw (2pt,1) -- (-2pt,1) node[anchor=south east] {i};
+\draw (2pt,2) -- (-2pt,2) node[anchor=south east] {2i};
+\draw (2pt,3) -- (-2pt,3) node[anchor=south east] {3i};
+\draw (2pt,-1) -- (-2pt,-1) node[anchor=south east] {-i};
+\draw (2pt,-2) -- (-2pt,-2) node[anchor=south east] {-2i};
+\draw (2pt,-3) -- (-2pt,-3) node[anchor=south east] {-3i};
+\draw (1,2pt) -- (1,-2pt) node[anchor=south east] {1};
+\draw (2,2pt) -- (2,-2pt) node[anchor=south east] {2};
+\draw (3,2pt) -- (3,-2pt) node[anchor=south east] {3};
+\draw (-1,2pt) -- (-1,-2pt) node[anchor=south east] {-1};
+\draw (-2,2pt) -- (-2,-2pt) node[anchor=south east] {-2};
+\draw (-3,2pt) -- (-3,-2pt) node[anchor=south east] {-3};
+\filldraw (-1,1.732) circle[radius=1.5pt];
+\node[above left=7pt of {(-1,1.732)}] {\(-1+i\sqrt{3}\)};
+\end{tikzpicture}
+
+\begin{align*}
+z &= -1 + i\sqrt{3} \\
+r &= |z| \\
+ &= \sqrt{-1^2 + (\sqrt{3})^2} \\
+ &= 2 \\
+ \theta &= tan^{-1}(\frac{\sqrt{3}}{-1}) \\
+ &= \frac{3\pi}{2} \quad \text{(second quadrant)} \\
+ z &= 2e^{i\frac{3\pi}{2}} \\
+\end{align*}
+
+\newpage
+\textbf{Question 3c.}
+
+\begin{tikzpicture}
+\draw[step=1cm,gray,very thin] (-3.9,-3.9) grid (3.9,3.9);
+\draw[thick,->] (0,0) -- (4,0);
+\draw[thick,->] (0,0) -- (0,4);
+\draw[thick,->] (0,0) -- (-4,0);
+\draw[thick,->] (0,0) -- (0,-4);
+\draw (2pt,1) -- (-2pt,1) node[anchor=south east] {i};
+\draw (2pt,2) -- (-2pt,2) node[anchor=south east] {2i};
+\draw (2pt,3) -- (-2pt,3) node[anchor=south east] {3i};
+\draw (2pt,-1) -- (-2pt,-1) node[anchor=south east] {-i};
+\draw (2pt,-2) -- (-2pt,-2) node[anchor=south east] {-2i};
+\draw (2pt,-3) -- (-2pt,-3) node[anchor=south east] {-3i};
+\draw (1,2pt) -- (1,-2pt) node[anchor=south east] {1};
+\draw (2,2pt) -- (2,-2pt) node[anchor=south east] {2};
+\draw (3,2pt) -- (3,-2pt) node[anchor=south east] {3};
+\draw (-1,2pt) -- (-1,-2pt) node[anchor=south east] {-1};
+\draw (-2,2pt) -- (-2,-2pt) node[anchor=south east] {-2};
+\draw (-3,2pt) -- (-3,-2pt) node[anchor=south east] {-3};
+\filldraw (-3,0) circle[radius=1.5pt];
+\node[below=5pt of {(-3,0)}] {\(-3\)};
+\end{tikzpicture}
+
+\begin{align*}
+z &= -3 \\
+r &= |z| \\
+ &= \sqrt{-3^2} \\
+ &= 3 \\
+ \theta &= \pi \\
+ z &= 3e^{i\pi} \\
+\end{align*}
+
+\textbf{Question 3c.}
+\begin{align*}
+ z^2 + z + 1 &= 0 \\
+ z^2 + z  &= -1 \\
+ z^2 + z + \frac{1}{4} &= -\frac{3}{4} \\
+ (z+\frac{1}{2})^2 &= -\frac{3}{4} \\
+ z+\frac{1}{2} &= \pm i\frac{\sqrt{3}}{2} \\
+ z &= -\frac{1}{2} \pm i\frac{\sqrt{3}}{2} \\
+ z_1 &= -\frac{1}{2} + i\frac{\sqrt{3}}{2} \\
+     &= e^{i\frac{2\pi}{3}} \\
+ z_2 &= -\frac{1}{2} - i\frac{\sqrt{3}}{2} \\
+     &= e^{-i\frac{2\pi}{3}} \\
+\end{align*}
 \end{document}
 
